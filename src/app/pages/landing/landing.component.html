@@ -1,0 +1,20 @@
+
+
+<div class="container my-3">
+  <div class="grid-container">
+  <div *ngFor="let book of books" class="grid-item">
+    <img [src]="'https://covers.openlibrary.org/b/id/' + book.cover_id + '-L.jpg'" alt="Book Cover" />
+    <h3>{{ book.title }}</h3>
+    <p>Published: {{ book.first_publish_year }}</p>
+    <!-- <p>{{ book.authors.join(', ') }}</p> -->
+<div class="button-style">
+  <button [routerLink]="['/book', book.key]">More</button>
+    <button class="button-auther" [routerLink]="['/author', book.key]">author</button>
+</div>
+
+  </div>
+</div>
+</div>
+
+
+

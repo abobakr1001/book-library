@@ -1,0 +1,44 @@
+<!-- <div class="book-details" *ngIf="book">
+  <img *ngIf="book.covers && book.covers[0]"
+       [src]="'https://covers.openlibrary.org/b/id/' + book.covers[0] + '-L.jpg'"
+       alt="Book Cover" />
+  <h2>{{ book.title }}</h2>
+  <p><strong>First Publish Year:</strong> {{ book.first_publish_year }}</p>
+  <p><strong>Author(s):</strong>
+    <span *ngFor="let author of authors">
+      {{ author.name }}<span *ngIf="!author?.last">, </span>
+    </span>
+  </p>
+  <p><strong>Editions Count:</strong> {{ book.edition_count }}</p>
+  <p><strong>Number of Pages:</strong> {{ book.number_of_pages }}</p>
+</div> -->
+
+
+ <!-- Author Information -->
+ <div class="row m-3">
+  <div class="col-md-4">
+  <h1>{{ book.title }}</h1>
+  <img *ngIf="book.covers && book.covers[0]"
+  [src]="'https://covers.openlibrary.org/b/id/' + book.covers[0] + '-L.jpg'"
+  alt="Book Cover" />
+  </div>
+  <div class="col-md-7 my-4">
+  <div class="author-meta">
+    <p><strong>First Publish Year:</strong> {{ book.first_publish_date}}</p>
+    <p><strong>Editions Count:</strong>{{ book.edition_count }}</p>
+    <p><strong>Number of Pages:</strong> {{ book.number_of_pages }}</p>
+    <div class="author-subjects">
+      <h3>Top Subjects</h3>
+      <div class="subject-tags">
+        <span *ngFor="let subject of book.subjects" class="book-subjects">{{ subject }}</span>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+  <!-- Top Subjects -->
+
+</div>

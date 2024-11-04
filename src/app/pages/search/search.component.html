@@ -1,0 +1,25 @@
+<div class="search-container">
+  <select [(ngModel)]="searchKey">
+    <option value="title">Title</option>
+    <option value="author">Author</option>
+    <option value="subject">Subject</option>
+  </select>
+  <input [(ngModel)]="searchQuery" placeholder="Search for books" />
+  <button (click)="onSearch()">Search</button>
+</div>
+
+<div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+<div class="book-grid" *ngIf="books.length > 0">
+  <div class="book-item" *ngFor="let book of books">
+    <img *ngIf="book.cover_i"
+    [src]="'https://covers.openlibrary.org/b/id/' + book.cover_i + '-M.jpg'"
+    alt="Book Cover" />
+<img *ngIf="!book.cover_i && book.edition_key?.length"
+    [src]="'https://covers.openlibrary.org/b/olid/' + book.edition_key[0] + '-M.jpg'"
+    alt="Book Cover" />    <h3>{{ book.title }}</h3>
+    <p>{{ book.author_name?.join(', ') }}</p>
+  </div>
+</div>
+
+

@@ -1,0 +1,29 @@
+<div *ngIf="bookDetails" class="book-details m-3">
+  <div class="row">
+    <div class="col-md-4">
+      <img *ngIf="bookDetails.covers?.length"
+           [src]="getCoverUrl(bookDetails.covers[0])"
+           alt="Book Cover" />
+        </div>
+    <div class="col-md-6 button-style">
+  <h2>{{ bookDetails.title }}</h2>
+  <p><strong>First Published:</strong> {{ bookDetails.first_publish_date }}</p>
+
+
+
+  <p><strong>Subjects:</strong> {{ bookDetails.subjects?.join(', ') }}</p>
+  <p><strong>Dewey Number:</strong> {{ bookDetails.dewey_number }}</p>
+  <button (click)="addToWishlist(bookDetails)">Add to Wishlist</button>
+    </div>
+
+  </div>
+
+
+
+
+</div>
+
+
+
+
+

@@ -1,0 +1,12 @@
+.wishlist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+button{
+  border: 0;
+  background: rgb(5, 88, 60);
+  color: #fff;
+  padding: 5px 17px;
+  border-radius: 4px;
+}
